@@ -1,13 +1,15 @@
 $(function() {
-  var handleWeatherResponse = function(data) {
-    console.log(data);
+var handleWeatherResponse = function(data) {
+  console.log(data);
 
-    // Put your code here to change the "markup" variable. 
+    // Put your code here to change the "markup" variable.
     // Don't change any other code in this file. You will be sad.
-    
-    var markup = "The weather report... " + "will be here when I finish my homework.";
-    
-    
+
+    var markup = "The weather forecast for Chicago today is: " + data.currently.summary +
+    ". The weather forecast for tomorrow is: " + data.daily.data[0].summary + " " +
+          "The weather forecast 2 days from today is: " + data.daily.data[1].summary + " " +
+          "The weather forecast 3 days from today is: " + data.daily.data[2].summary + " "
+
     // End of your code
 
     $('.weather-report').html(markup);
